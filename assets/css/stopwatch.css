@@ -1,0 +1,74 @@
+/* Reset body margins and padding */
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent scroll bars */
+}
+
+/* Fullscreen background with overlay container */
+.stopwatch-bg {
+    font-family: Arial, sans-serif;
+    position: relative; /* Set relative position for the overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw; /* Full width of the viewport */
+    background-image: url('../img/stopwatch_bg_01.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Dark transparent overlay */
+.stopwatch-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay with 50% opacity */
+    z-index: 0; /* Place overlay beneath the stopwatch */
+}
+
+/* Stopwatch container */
+.stopwatch {
+    position: relative; /* To sit above the overlay */
+    text-align: center;
+    background: white;
+    padding: 50px;
+    border-radius: 50px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+    z-index: 1; /* Ensure it sits above the overlay */
+}
+
+.display {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.controls button {
+    background-color: white; 
+    color: black; 
+    padding: 10px;
+    border: 3px solid green;
+    border-radius: 20px;
+}
+
+.controls button:hover {
+    background-color: green;
+    color: white;
+}
+
+.laps {
+    margin-top: 20px;
+    height: 200px; /* Set the max height for 10 laps */
+    overflow-y: auto;  /* Enable vertical scrolling */
+}
+
+/* Style for average lap time display */
+.average-lap {
+    margin-top: 10px;
+    font-weight: bold;
+}
